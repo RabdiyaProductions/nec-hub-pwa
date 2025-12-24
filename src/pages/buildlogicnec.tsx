@@ -56,7 +56,7 @@ export default function BuildLogicNEC() {
         }}
       >
         <img
-          src="/banners/buildlogic-nec-banner.png"
+          src="./banners/buildlogic-nec-banner.png"
           alt="BuildLogic NEC – Construction Intelligence Limited"
           style={{
             width: "100%",
