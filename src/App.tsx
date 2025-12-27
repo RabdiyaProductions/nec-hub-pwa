@@ -1,54 +1,68 @@
-import { Link, Route, Routes, Navigate } from "react-router-dom";
-import Home from "./pages/home";
-import BuildLogicNEC from "./pages/BuildLogicNEC";
-import ToolPage from "./pages/ToolPage";
+import "./App.css";
 
 export default function App() {
   return (
-    <div>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#0b1220",
+        color: "#ffffff",
+        fontFamily: "Inter, system-ui, Arial",
+        padding: 24,
+      }}
+    >
       <div
         style={{
-          padding: 14,
-          borderBottom: "1px solid #222",
-          display: "flex",
-          gap: 10,
-          alignItems: "center",
-          flexWrap: "wrap",
+          maxWidth: 720,
+          textAlign: "center",
+          background: "#111a2e",
+          borderRadius: 16,
+          padding: "48px 32px",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
         }}
       >
-        <div style={{ fontWeight: 900 }}>BuildLogic NEC Hub</div>
-
-        <Link
-          to="/"
+        <img
+          src="/banners/buildlogic-nec-banner.png"
+          alt="BuildLogic NEC"
           style={{
-            textDecoration: "none",
-            border: "1px solid #333",
-            padding: "6px 10px",
+            maxWidth: "100%",
+            marginBottom: 32,
             borderRadius: 12,
           }}
-        >
-          Home
-        </Link>
+        />
 
-        <Link
-          to="/buildlogic-nec"
+        <h1 style={{ fontSize: 36, marginBottom: 16 }}>
+          BuildLogic NEC Hub
+        </h1>
+
+        <p style={{ fontSize: 18, opacity: 0.85, marginBottom: 24 }}>
+          This platform is currently undergoing a major upgrade.
+        </p>
+
+        <p style={{ fontSize: 16, opacity: 0.7 }}>
+          We are consolidating all NEC micro-tools and suites into a single,
+          fully-featured Construction Intelligence Engine.
+        </p>
+
+        <div
           style={{
-            textDecoration: "none",
-            border: "1px solid #333",
-            padding: "6px 10px",
+            marginTop: 40,
+            padding: 20,
+            border: "1px solid rgba(255,255,255,0.15)",
             borderRadius: 12,
+            background: "rgba(255,255,255,0.03)",
           }}
         >
-          NEC Tools
-        </Link>
+          <strong>Status:</strong> 🚧 Coming Soon  
+          <br />
+          <span style={{ opacity: 0.75 }}>
+            Public access temporarily disabled
+          </span>
+        </div>
       </div>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/buildlogic-nec" element={<BuildLogicNEC />} />
-        <Route path="/tool/:id" element={<ToolPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
     </div>
   );
 }
